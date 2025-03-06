@@ -13,7 +13,7 @@ const SearchPosts = () => {
 
   return (
     <div>
-      <h1>Lista de Usuarios</h1>
+      <h1>Lista de Posts</h1>
       <input
         type="text"
         placeholder="Buscar por título"
@@ -23,7 +23,7 @@ const SearchPosts = () => {
       <ul>
         {
           posts.map((posts) => (
-            <li key={posts.id}>{posts.title}</li>
+            <li key={posts.id}>[{posts.id}] - {posts.title}</li>
           ))
         }
       </ul>

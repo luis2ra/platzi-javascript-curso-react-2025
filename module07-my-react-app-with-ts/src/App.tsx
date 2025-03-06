@@ -1,5 +1,6 @@
 import Button from "./components/Button"
 import Counter from "./components/Counter"
+import ContextApi from "./components/ContextApi"
 import './App.css'
 
 function greet(name: string): string {
@@ -12,8 +13,14 @@ function App() {
 
   return (
     <>
+      {/* class 20 */}
       <Button onclick={handleClick} label="Click me" />
+      
+      {/* class 21 */}
       <Counter />
+
+      {/* class 22 */}
+      <ContextApi /> 
     </>
   )
 }

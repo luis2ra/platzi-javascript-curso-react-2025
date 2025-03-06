@@ -1,11 +1,16 @@
 import { useContext, createContext, useState } from "react"
-import CounterWithCustomHook from "./components/CounterWithCustomHook/CounterWithCustomHook"
-import CounterWithReactMemo from "./components/CounterWithReactMemo/CounterWithReactMemo"
-import './App.css'
 
-const ThemeContext = createContext();
+type ThemeContextType = {
+  theme: string;
+  toggleTheme: () => void;
+}
 
-function ThemeProvider({ children }) {
+const ThemeContext = createContext<ThemeContextType>({
+  theme: "light",
+  toggleTheme: () => {},
+});
+
+function ThemeProvider({ children }: { children: React.ReactNode }): React.ReactNode {
   const [theme, setTheme] = useState("light")
 
   const toggleTheme = () => {
@@ -35,16 +40,14 @@ function ThemeButton() {
   )
 }
 
-function App() {
+function ContextApi() {
   return (
     <>
       <ThemeProvider>
         <ThemeButton />
       </ThemeProvider>
-      <CounterWithCustomHook />
-      <CounterWithReactMemo />
     </>
   )
 }
 
-export default App
+export default ContextApi

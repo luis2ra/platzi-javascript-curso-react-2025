@@ -1,6 +1,6 @@
 const TailwindText = () => {
   return (
-    <h1 className="text-3xl font-bold underline">
+    <h1 className="text-center text-3xl font-bold underline text-fuchsia-500">
       Hello world!
     </h1>
   );
